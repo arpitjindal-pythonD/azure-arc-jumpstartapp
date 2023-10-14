@@ -13,6 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "fetch" : "git submodule update --init --recursive && git submodule foreach --recursive git fetch && git submodule foreach --recursive git checkout origin/newversion",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
