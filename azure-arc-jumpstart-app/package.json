@@ -13,7 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy" : "git submodule update --init --recursive && git submodule foreach --recursive git fetch && git submodule foreach --recursive git checkout origin/main && mkdir docs && mkdir img && rsync -uav ../arc_jumpstart_docs/docs/** ./public/docs/ && rsync -uav ../arc_jumpstart_docs/img/** ./public/img/ && npm run build",
+    "predeploy" : "git submodule update --init --recursive && git submodule foreach --recursive git fetch && git submodule foreach --recursive git checkout origin/main && rsync -uav ../arc_jumpstart_docs/docs/** ./public/docs/ && rsync -uav ../arc_jumpstart_docs/img/** ./public/img/ && npm install && npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
