@@ -2,3 +2,6 @@
 	path = submodules
 	url = https://github.com/microsoft/azure_arc
 	branch = main
+[submodule "arc_jumpstart_docs"]
+	path = arc_jumpstart_docs
+	url = https://github.com/arpitjindal-pythonD/arc_jumpstart_docs.git
