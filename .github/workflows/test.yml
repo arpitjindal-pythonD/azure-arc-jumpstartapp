@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - newversion
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: |
+          cd azure-arc-jumpstartapp
+          npm install
+
+      - name: Build site
+        run: |
+          cd azre-arc-jumpstartapp
+          npm run build  # Replace with your build command
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config user.name "arpitjindal-pythonD"
+          git config user.email "arpit.jindal@protonmail.com"
+          git checkout gh-pages
+          git rm -r .
+          cp -r dist/* .
+          git add .
+          git commit -m "Auto-deploy to GitHub Pages"
+          git push --force origin gh-pages
