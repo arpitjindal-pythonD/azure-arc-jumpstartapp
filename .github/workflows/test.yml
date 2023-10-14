@@ -32,4 +32,5 @@ jobs:
         run: |
           git config user.name "arpitjindal-pythonD"
           git config user.email "arpit.jindal@protonmail.com"
+          cd azure-arc-jumpstart-app
           npm run deploy
