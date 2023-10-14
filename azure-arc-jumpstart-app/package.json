@@ -1,7 +1,6 @@
 {
   "name": "azure-arc-jumpstart-app",
   "version": "0.1.0",
-  "homepage": "https://arpitjindal-pythond.github.io/azure-arc-jumpstartapp",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,7 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy" : "git submodule update --init --recursive && git submodule foreach --recursive git fetch && git submodule foreach --recursive git checkout origin/main && rsync -uav ../arc_jumpstart_docs/docs/** ./public/docs/ && rsync -uav ../arc_jumpstart_docs/img/** ./public/img/ && npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json && npm install && npm run build",
+    "predeploy" : "npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json && npm install && npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
