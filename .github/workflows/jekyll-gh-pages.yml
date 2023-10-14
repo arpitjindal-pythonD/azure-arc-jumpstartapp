@@ -45,10 +45,14 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://arpitjindal-pythond.github.io/azure-arc-jumpstartapp/
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Configure Git
+        run: |
+          git config --global user.name "arpitjindal-pythonD"
+          git config --global user.email "arpit.jindal@protonmail.com"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
