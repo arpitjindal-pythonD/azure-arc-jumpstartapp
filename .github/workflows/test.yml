@@ -21,12 +21,12 @@ jobs:
     
     - name: Install Dependencies
       run: |
-        cd azure-jumpstart-app
+        cd azure-arc-jumpstart-app
         npm ci
     
     - name: Build React App
       run: |
-        cd azure-jumpstart-app
+        cd azure-arc-jumpstart-app
         npm run build
     
     - name: Deploy to GitHub Pages
