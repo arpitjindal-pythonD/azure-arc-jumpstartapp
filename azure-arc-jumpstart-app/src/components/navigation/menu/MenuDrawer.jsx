@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MenuDrawer.css";
 import MenuCard from "./MenuCard";
 import SubMenuItem from "./SubMenuItem";
