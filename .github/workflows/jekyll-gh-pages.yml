@@ -31,7 +31,7 @@ jobs:
       - name: entering directory
         run: |
           cd azure-arc-jumpstart-app
-          npm deploy
+          npm run deploy
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
