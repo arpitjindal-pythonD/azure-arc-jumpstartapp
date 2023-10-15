@@ -23,12 +23,14 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd azure-arc-jumpstart-app
+          npm run fetch-docs 
           npm install
-          npm run build --if-present
-          npm run test --if-present
+          npm run build 
+          npm run test
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip release.zip ./azure-arc-jumpstart-app/build/* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -59,4 +61,4 @@ jobs:
           app-name: 'azure-arc-webapp'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_11F03205F3764557BDF7D65395FCC20C }}
-          package: .
+          package: ./azure-arc-jumpstart-app/build
