@@ -22,6 +22,8 @@ jobs:
     - name: Install Dependencies
       run: |
         cd azure-arc-jumpstart-app
+        rm -rf node_modules
+        npm install
         npm ci
     
     - name: Build React App
