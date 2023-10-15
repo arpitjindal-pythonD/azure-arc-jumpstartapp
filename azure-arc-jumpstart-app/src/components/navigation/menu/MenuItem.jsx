@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MenuItem.css";
 
 const MenuItem = ({ children, index, isSelected, onClick }) => {
