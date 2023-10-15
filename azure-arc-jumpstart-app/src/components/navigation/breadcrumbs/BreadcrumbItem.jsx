@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './BreadcrumbItem.css';
 
 const BreadcrumbItem = ({ children, index, selected }) => {
